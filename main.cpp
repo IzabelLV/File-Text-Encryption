@@ -2,17 +2,21 @@
 #include <fstream>
 #include <string>
 
-std::string xorEncryptDecrypt(const std::string& text, char key) {
+std::string xorEncryptDecrypt(const std::string& text, char key) 
+{
     std::string result = text;
-    for (char& c : result) {
+    for (char& c : result) 
+    {
         c ^= key; 
     }
     return result;
 }
 
-std::string readFile(const std::string& filename) {
+std::string readFile(const std::string& filename) 
+{
     std::ifstream file(filename);
-    if (!file.is_open()) {
+    if (!file.is_open()) 
+    {
         std::cerr << "Could not open the file!" << std::endl;
         exit(1);
     }
@@ -21,9 +25,11 @@ std::string readFile(const std::string& filename) {
     return content;
 }
 
-void writeFile(const std::string& filename, const std::string& content) {
+void writeFile(const std::string& filename, const std::string& content) 
+{
     std::ofstream file(filename);
-    if (!file.is_open()) {
+    if (!file.is_open()) 
+    {
         std::cerr << "Could not open the file to write." << std::endl;
         exit(1);
     }
